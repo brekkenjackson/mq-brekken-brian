@@ -208,7 +208,7 @@
     }
 
     .hidden-on-desktop {
-        visibility: hidden;
+        display: none;
         text-decoration: none;
         list-style: none;
     }
@@ -234,6 +234,7 @@
         flex-direction: row;
         align-items: center;
         padding: 1em;
+        margin-top: .5em;
         border-top: 3px double #2f2f2f;
         border-bottom: 3px double #2f2f2f;
     }
@@ -341,15 +342,20 @@
     }
     .both-sections {
         display: flex;
+        justify-content: center;
     }
 
     .main {
         flex: 2;
+        max-width: 600px;
+        margin-top: 1em;
     }
 
     .sub-section {
         flex: 1;
         margin-top: 1em;
+        font-family: "Playfair Display";
+        max-width: 350px;
     }
 
     #social-media-links {
@@ -402,7 +408,7 @@
     footer {
         display: flex;
         padding-top: 10em;
-        margin-bottom: 6em;
+        margin-bottom: 1em;
         margin-top: 3em;
         flex-basis: 25%;
         justify-content: space-between;
