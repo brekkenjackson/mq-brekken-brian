@@ -36,6 +36,9 @@
         margin-top: 1em;
         margin-bottom: 1em;
         width: 90%;
+        -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+        filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+        mix-blend-mode: multiply;
     }
     .imageRadius{
         border-radius: 11px;
@@ -217,7 +220,7 @@
     }
 
     li {
-        padding: 0 1em;
+        padding: 0;
     }
 
     h1 {
@@ -229,15 +232,20 @@
     nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
         padding: 1em;
+        border-top: 3px double #2f2f2f;
+        border-bottom: 3px double #2f2f2f;
     }
 
+    nav .nav-links {
+        margin-left: auto;
+    }
 
     img {
         display: flex;
         width: 60vw;
+        margin-top: 2em;
         border-radius: 15px;
         margin-left: auto;
         margin-right: auto;
@@ -270,11 +278,55 @@
         margin: 0 auto;
     }
     a {
-        color: blue;
+        color: #2F4858;
         display: flex;
         justify-content: center;
+        text-decoration: none;
+        font-family: "Droid Serif";
+        font-size: 1.2rem;
+        margin: .5em 0;
+        padding: 0;
     }
+    nav a {
+        color: #748c89;
+    }
+    nav a:before{
+        content: '';
+        right: 10px;
+        top: 10px;
+        border-bottom: 2px solid #2f4858;
+        border-left: 2px solid #2f4858;
+        transform: translate(100%, -50%);
+    }
+    nav a::before, a::after{
+        content: '';
+        height: 12px;
+        width: 12px;
+        /*position: absolute;*/
+        transition: all .35s ease;
+        opacity: 0;
 
+        padding: 0;
+    }
+    nav a:after {
+        content: '';
+        left: 10px;
+        bottom: 10px;
+        border-top: 2px solid #2f4858;
+        border-right: 2px solid #2f4858;
+        transform: translate(-100%, 50%)
+    }
+    nav a:hover:before {
+        transform: translate(0 ,100%);
+        opacity: 1;
+    }
+    nav a:hover:after {
+        transform: translate(-10%, -60%);
+        opacity: 1;
+    }
+    nav a:hover{
+        color: #2f4858;
+    }
     p {
         margin: 1em;
         display: flex;
@@ -297,6 +349,7 @@
 
     .sub-section {
         flex: 1;
+        margin-top: 1em;
     }
 
     #social-media-links {
